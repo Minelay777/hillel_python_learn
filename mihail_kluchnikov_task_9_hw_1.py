@@ -8,9 +8,12 @@ my_number('838372893')
 +044838372893 результат.
 '''
 
-def my_number(number):
-    def user_telephone():
-        print('+044' + number)
-    return user_telephone
-f = my_number('838372893')
-f()
+def my_number(code):
+    def wrapper(number):
+        print(code + number)
+
+    return wrapper
+
+
+full_number = my_number('+044')
+full_number('838372893')
